@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+
+    <!--services start -->
+    <form style="border:1px solid #ccc">
+        <div class="container form-group">
+          <h1> تحویل گواهینامه رانندگی</h1>
+          <hr>
+      
+          <label for="email"><b> آدرس </b></label>
+          <input type="text" id="myFile" name="filename">
+          <br>
+          <label for="email"><b>انتخاب زمان ارسال</b></label><br>
+          <label class="cont">27 بهمن 1399
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label><br>
+          <label class="cont">28 بهمن 1399
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label><br>
+          <label class="cont">29 بهمن 1399
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label><br>
+          <label class="cont">30 بهمن 1399
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label><br>
+          <br>
+          
+          <div class="clearfix">
+            <a class="btn btn-primary" role="button">ارسال</a>
+          </div>
+        </div>
+      </form>
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+{% endblock page_content %}

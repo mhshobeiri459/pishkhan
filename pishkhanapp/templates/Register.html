@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- body -->
+{% block page_content %}
+	
+
+    <form action="action_page.php" style="border:1px solid #ccc" id="sabt">
+        <div class="container form-group">
+          <img src="{% static 'images/signup.png' %}">
+          <hr>
+      
+          {% csrf_token %}
+          {{ form.as_p }}
+            
+          <div class="clearfix">
+            <button type="submit" class="signupbtn" id="sbtn">ثبت نام</button>
+          </div>
+        </div>
+      </form> 
+      {% endblock page_content %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+
+    <!--services start -->
+    <form style="border:1px solid #ccc" method="POST" action="/DrivingLiscenseFollowup/">
+      <div class="container form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"  value="ارسال">        
+        {% if res_img %}
+        <img src="{% static res_img %}" >
+        {% endif %}
+      </div>
+    </form> 
+      <!-- Javascript files-->
+{% endblock page_content %}

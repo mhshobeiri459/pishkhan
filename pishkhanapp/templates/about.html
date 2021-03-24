@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>cron</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<!-- body -->
+<body class="about_page">
+	<div class="header_main">
+		<div class="container">
+			<div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+		</div>
+	</div>
+    >
+    <div class="navbar1">
+        <img src="images/search-icon.png" alt="icon" style="margin: 10px 0px 0px 50px;"></a>
+        <a href="#pishkhan_home" id="navbtns">خانه</a>
+        <a href="#about_us" id="navbtns">درباره ما</a>
+        <a href="#moarefi" id="navbtns">معرفی خدمات</a>
+        <div class="dropdown1">
+          <button class="dropbtn1" id="navbtns" >خدمات 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content1">
+            <center><div class="header1">
+             <a><h2 id="servs">خدمات</a></h2></a>
+            </div>  </center> 
+            <div class="row">
+              <div class="column">
+                <h3 id="tit">کارت ملی هوشمند</h3>
+                <a href="Services/NationalCard.html">درخواست صدور کارت ملی هوشمند</a>
+                <a href="Services/NationalFollowup.html">پیگیری درخواست صدور کارت ملی هوشمند</a>
+                <a href="Services/NationalDelivery.html">دریافت کارت ملی هوشمند</a>
+              </div>
+              <div class="column">
+                <h3 id="tit">گذرنامه</h3>
+                <a href="Services/Passport.html">درخواست صدور گذرنامه</a>
+                <a href="Services/PassportFollowup.html">پیگیری درخواست صدور گذرنامه</a>
+                <a href="Services/Passportdelivery.html">دریافت گذرنامه</a>
+              </div>
+              <div class="column">
+                <h3 id="tit">گواهینامه رانندگی</h3>
+                <a href="Services/DrivingLiscence.html">درخواست صدور گواهینامه رانندگی</a>
+                <a href="Services/DrivingLiscenceFollowUp.html">پیگیری درخواست صدور گواهینامه رانندگی</a>
+                <a href="Services/DrivingLisenceDelivery.html">دریافت گواهینامه رانندگی</a>
+              </div>
+              <div class="column">
+                  <h3 id="tit">خلافی خودرو</h3>
+                  <a href="Services/Violation.html">درخواست دریافت خلافی خودرو</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact_us" id="navbtns">ارتباط با ما</a> 
+        <button id="logbtn" onclick="document.getElementById('id01').style.display='block'" >ورود به حساب کاربری</button>
+      </div>
+      
+	
+    <div>
+            <div id="id01" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="images/user.jpg" alt="Avatar" class="avatar" height="300px" width="300px">
+            </div>
+                <div class="container">
+                 <center>
+                    <label for="uname"><b>نام کاربری</b></label><br>
+                    <input type="text" placeholder="نام کاربری" name="uname" required><br>
+                    <label for="psw"><b>رمز عبور</b></label><br>
+                    <input type="password" placeholder="رمز عبور" name="psw" required><br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> مرا به خاطر بسپار
+                    </label> 
+                    <br>  
+                    <button type="submit" id="enterbtn">ورود</button>
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">انصراف</button>
+                    <br>
+                    <span class="psw"><a href="#">بازیابی رمز عبور</a></span>
+                </center> 
+                </div>
+                    <div class="container" style="text-align: center;">
+                        <span class="psw"><a href="#">حساب کاربری ندارید؟</a></span>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="signbtn" id="signbtn">ثبت نام</button>
+                    </div>
+            </form>
+            </div>
+
+            <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            </script>
+    </div>
+
+    <!-- end header end --> 
+    <!--services start -->
+    <form style="border:1px solid #ccc">
+        <div class="container form-group">
+          <h1>فرم خلافی</h1>
+          <p>لطفا این فرم را با اطلاعات مناسب پر کنید</p>
+          <hr>
+            
+          <label for="email"><b> نام مالک خودرو </b></label>
+          <input type="text" id="myFile" name="filename">
+          <br>
+          <label for="email"><b> شماره پلاک خوردو </b></label>
+          <input type="text" id="myFile" name="filename">
+          <br>
+          <label for="email"><b> شماره موتور </b></label>
+          <input type="text" id="myFile" name="filename">
+          <br>
+          <label for="email"><b> نوع ماشین </b></label>
+          <input type="text" id="myFile" name="filename">
+          <br>
+          
+          <div class="clearfix">
+            <a class="btn btn-primary" href="./successful.html" role="button">ارسال</a>
+          </div>
+        </div>
+      </form> 
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

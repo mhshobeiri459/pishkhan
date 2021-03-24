@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+
+
+    <!-- end header end --> 
+    <!--services start -->
+    <form style="border:1px solid #ccc" method="POST" action="/DrivingLiscense/">
+        <div class="container form-group">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit"  value="ارسال">
+        </div>
+      </form> 
+{% endblock page_content %}
+
