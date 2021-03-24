@@ -22,11 +22,9 @@ class userfile(models.Model):
 
 
 class medicalForm(models.Model):
-    firstname = models.CharField(max_length=length, blank=True, null=True)
-    lastname = models.CharField(max_length=length, blank=True, null=True)
-    ssn = models.IntegerField()
-    birthdate = models.DateField(auto_now=False, auto_now_add=False)
-    result = models.FileField( upload_to=None, max_length=100)
+    result = models.ImageField( upload_to='medresults', max_length=100,blank = True, default="default.png")
+    filenum = models.ForeignKey("pishkhanapp.userfile",  on_delete=models.CASCADE)
+
 
     
 
@@ -35,32 +33,32 @@ class medicalForm(models.Model):
         verbose_name_plural = ("medicalforms")
 
     def __str__(self):
-        return self.firstname
+        return self.filenum
 
     def get_absolute_url(self):
         return reverse("medicalform_detail", kwargs={"pk": self.pk})
 
 class violation(models.Model):
-    name = models.CharField(max_length=length, blank=True, null=True, choices=CHOICES,)
     policenum = models.IntegerField()
     carnum = models.IntegerField()
-    filenum = models.ForeignKey("pishkhanapp.userfile",  on_delete=models.CASCADE)
+    filenum = models.ForeignKey("pishkhanapp.userfile", on_delete=models.CASCADE) 
 
     class Meta:
         verbose_name = ("violation")
         verbose_name_plural = ("violations")
 
     def __str__(self):
-        return self.name
+        return self.carnum
 
     def get_absolute_url(self):
         return reverse("violation_detail", kwargs={"pk": self.pk})
 
 class service(models.Model):
-    typeofservice  = models.CharField(max_length=length, blank=True, null=True)
-    servicedate = models.DateField(auto_now=False, auto_now_add=False)    
-    filenum = models.ForeignKey("pishkhanapp.userfile",  on_delete=models.CASCADE)
-
+    typeofservice  = models.CharField(max_length=length, blank=True, null=True, choices=CHOICES)
+    servicedate = models.DateField(auto_now=False, auto_now_add=False) 
+    filenum = models.ForeignKey("pishkhanapp.userfile", on_delete=models.CASCADE)   
+    result = models.OneToOneField("pishkhanapp.resultreq",  on_delete=models.CASCADE)
+    
     class Meta:
         verbose_name = ("service")
         verbose_name_plural = ("services")
@@ -73,9 +71,7 @@ class service(models.Model):
 
 
 class resultreq(models.Model):
-    filenum = models.ForeignKey("pishkhanapp.userfile", on_delete=models.CASCADE)
-    regnum = models.IntegerField()
-    result = models.FileField( upload_to=None, max_length=100)
+    result = models.ImageField( upload_to='results', max_length=100,blank = True, default="default.png")
     
 
     class Meta:
