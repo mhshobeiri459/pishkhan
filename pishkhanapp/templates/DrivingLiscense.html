@@ -7,12 +7,25 @@
 
     <!-- end header end --> 
     <!--services start -->
-    <form style="border:1px solid #ccc" method="POST" action="/DrivingLiscense/">
+    <div class="services_main">
+    <form style="border:1px solid rgb(32, 20, 20); background-color: black;" method="POST" action="/DrivingLiscense/" enctype="multipart/form-data">
         <div class="container form-group">
+          {% if messages %}
+          <div class="messages" style="font-size: xx-large;">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>  {{ message }} : {{ code }} </li>
+            {% endfor %}
+          </div>
+          {% else %}
+          <h1 style="color:white">فرم دریافت گواهینامه</h1>
+
           {% csrf_token %}
           {{ form.as_p }}
           <input type="submit"  value="ارسال">
+          {% endif %}
+          
         </div>
       </form> 
+    </div>
 {% endblock page_content %}
 

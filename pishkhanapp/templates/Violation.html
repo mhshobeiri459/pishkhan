@@ -6,31 +6,16 @@
 {% block page_content %}
 	
     <!--services start -->
-    <form style="border:1px solid #ccc">
-        <div class="container form-group">
-          <h1>فرم خلافی خودرو</h1>
+    <form enctype="multipart/form-data" style="border:1px solid #ccc; background-color: black;" method="POST" action="/Violation/">
+      <div class="container form-group">
+          <h1 style="color:white">فرم خلافی خودرو</h1>
           <hr>
             
-          <label for="email"><b> نام مالک خودرو </b></label>
-          <input type="text" id="myFile" name="filename">
-          <br>
-          <label for="email"><b> شماره پلاک خوردو </b></label>
-          <input type="text" id="myFile" name="filename">
-          <br>
-          <label for="email"><b> شماره موتور </b></label>
-          <input type="text" id="myFile" name="filename">
-          <br>
-          <label for="email"><b> نوع ماشین </b></label>
-          <input type="text" id="myFile" name="filename">
-          <br>
-          
+          {% csrf_token %}
+          {{ form.as_p }}
           <div class="clearfix">
-            <a class="btn btn-primary" role="button">استعلام</a>
+            <button type="submit" class="signupbtn" id="sbtn">ارسال</button>
           </div>
         </div>
       </form> 
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
   {% endblock page_content %}

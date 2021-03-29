@@ -4,10 +4,12 @@
 <!-- body -->
 {% block page_content %}
 	
-
-    <form action="action_page.php" style="border:1px solid #ccc" id="sabt">
+    <div class="services_main">
+    <form action="/signup/" style="border:1px solid #ccc; background-color: black;" id="sabt" method="POST">
         <div class="container form-group">
-          <img src="{% static 'images/signup.png' %}">
+          <!-- <img src="{% static 'images/signup.png' %}"> -->
+          <h1 style="color:white">فرم ثبت نام</h1>
+
           <hr>
       
           {% csrf_token %}
@@ -17,5 +19,6 @@
             <button type="submit" class="signupbtn" id="sbtn">ثبت نام</button>
           </div>
         </div>
+      </div>
       </form> 
       {% endblock page_content %}

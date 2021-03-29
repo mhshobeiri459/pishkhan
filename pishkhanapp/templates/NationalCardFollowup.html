@@ -2,22 +2,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- body -->
 {% block page_content %}
-
     <!--services start -->
-    <form style="border:1px solid #ccc; background-color: black;" method="POST" action="/DrivingLiscenseFollowup/">
+    <form style="border:1px solid #ccc; background-color: black;" method="POST" action="/NationalCardFollowup/">
       <div class="container form-group">
-        <h1 style="color:white">فرم پیگیری گواهینامه</h1>
+        <h1 style="color:white">فرم پیگیری کارت ملی</h1>
 
         {% csrf_token %}
         {{ form.as_p }}
         <div class="clearfix">
           <button type="submit" class="signupbtn" id="sbtn">ارسال</button>
-        </div>  
+        </div>
         {% if res_img %}
         <img src="{{ res_img.url }}" >
         {% endif %}
       </div>
     </form> 
-      <!-- Javascript files-->
-{% endblock page_content %}
+ {% endblock page_content %}

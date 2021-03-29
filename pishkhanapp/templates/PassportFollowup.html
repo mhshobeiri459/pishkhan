@@ -6,21 +6,18 @@
 {% block page_content %}
 	
     <!--services start -->
-    <form style="border:1px solid #ccc">
-        <div class="container form-group">
-          <h1>فرم پیگیری درخواست صدور گذرنامه</h1>
-          <hr>
-      
-          <label for="email"><b> کد پیگیری </b></label>
-          <input type="text" id="myFile" name="filename">
-          <br>
-          <div class="clearfix">
-            <a class="btn btn-primary" role="button">ارسال</a>
-          </div>
-        </div>
-      </form>
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
+    <form style="border:1px solid #ccc; background-color: black;" method="POST" action="/PassportFollowup/">
+      <div class="container form-group">
+        <h1 style="color:white">فرم پیگیری گذرنامه</h1>
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="clearfix">
+          <button type="submit" class="signupbtn" id="sbtn">ارسال</button>
+        </div>        
+        {% if res_img %}
+        <img src="{{ res_img.url }}" >
+        {% endif %}
+      </div>
+    </form> 
       {% endblock page_content %}

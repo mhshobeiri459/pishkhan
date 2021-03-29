@@ -4,11 +4,10 @@
 
 <!-- body -->
 {% block page_content %}
-	
     <!--services start -->
-    <form enctype="multipart/form-data" style="border:1px solid #ccc; background-color: black;" method="POST" action="/PassportDelivery/">
+    <form enctype="multipart/form-data" style="border:1px solid #ccc; background-color: black;" method="POST" action="/NationalCardDelivery/">
         <div class="container form-group">
-          <h1 style="color:white"> تحویل گذرنامه</h1>
+          <h1 style="color:white">  تحویل کارت ملی هوشمند</h1>
           <hr>
       
           {% csrf_token %}
@@ -18,5 +17,6 @@
             <button type="submit" class="btn btn-primary" role="button">ارسال</a>
           </div>
         </div>
-      </form>
-      {% endblock page_content %}
+      </form> 
+      
+ {% endblock page_content %}

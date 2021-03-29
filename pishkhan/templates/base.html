@@ -40,8 +40,7 @@
     >
     <div class="navbar1">
         <img src="{% static 'images/search-icon.png' %}" alt="icon" style="margin: 10px 0px 0px 50px;"></a>
-        <a href="#pishkhan_home" id="navbtns">خانه</a>
-        <a href="#about_us" id="navbtns">درباره ما</a>
+        <a href="{% url 'index' %}" id="navbtns">خانه</a>
         <a href="#moarefi" id="navbtns">معرفی خدمات</a>
         <div class="dropdown1">
           <button class="dropbtn1" id="navbtns" >خدمات 
@@ -54,31 +53,35 @@
             <div class="row">
               <div class="column">
                 <h3 id="tit">کارت ملی هوشمند</h3>
-                <a href="NationalCard.html">درخواست صدور کارت ملی هوشمند</a>
-                <a href="NationalFollowup.html">پیگیری درخواست صدور کارت ملی هوشمند</a>
-                <a href="NationalDelivery.html">دریافت کارت ملی هوشمند</a>
+                <a href="{% url 'NationalCard' %}">درخواست صدور کارت ملی هوشمند</a>
+                <a href="{% url 'NationalCardFollowup' %}">پیگیری درخواست صدور کارت ملی هوشمند</a>
+                <a href="{% url 'NationalCardDelivery' %}">دریافت کارت ملی هوشمند</a>
               </div>
               <div class="column">
                 <h3 id="tit">گذرنامه</h3>
-                <a href="Passport.html">درخواست صدور گذرنامه</a>
-                <a href="PassportFollowup.html">پیگیری درخواست صدور گذرنامه</a>
-                <a href="Passportdelivery.html">دریافت گذرنامه</a>
+                <a href="{% url 'Passport' %}">درخواست صدور گذرنامه</a>
+                <a href="{% url 'PassportFollowup' %}">پیگیری درخواست صدور گذرنامه</a>
+                <a href="{% url 'PassportDelivery' %}">دریافت گذرنامه</a>
               </div>
               <div class="column">
                 <h3 id="tit">گواهینامه رانندگی</h3>
-                <a href="DrivingLiscence.html">درخواست صدور گواهینامه رانندگی</a>
-                <a href="DrivingLiscenceFollowUp.html">پیگیری درخواست صدور گواهینامه رانندگی</a>
-                <a href="DrivingLisenceDelivery.html">دریافت گواهینامه رانندگی</a>
+                <a href="{% url 'DrivingLiscense' %}">درخواست صدور گواهینامه رانندگی</a>
+                <a href="{% url 'DrivingLiscenseFollowup' %}">پیگیری درخواست صدور گواهینامه رانندگی</a>
+                <a href="{% url 'DrivingLiscenseDelivery' %}">دریافت گواهینامه رانندگی</a>
               </div>
               <div class="column">
                   <h3 id="tit">خلافی خودرو</h3>
-                  <a href="Violation.html">درخواست دریافت خلافی خودرو</a>
+                  <a href="{% url 'Violation' %}">درخواست دریافت خلافی خودرو</a>
                 </div>
             </div>
           </div>
         </div>
-        <a href="#contact_us" id="navbtns">ارتباط با ما</a> 
-        <button id="logbtn" onclick="document.getElementById('id01').style.display='block'" >ورود به حساب کاربری</button>
+        {% if user.is_authenticated %}
+        <h2 style="color: blanchedalmond;"> سلام {{ user.get_username }}  </h2>
+        {% else %}
+        <a id="logbtn" href="{% url 'login' %}" >ورود به حساب کاربری</button>
+        {% endif %}
+        
       </div>
        <div>
             <div id="id01" class="modal">
@@ -189,7 +192,9 @@
 
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.bundle.min.j' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+
 <br><br>
 
 

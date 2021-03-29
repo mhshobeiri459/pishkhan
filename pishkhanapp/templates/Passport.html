@@ -6,28 +6,24 @@
 {% block page_content %}
 	
     <!--services start -->
-    <form style="border:1px solid #ccc">
-        <div class="container form-group">
-          <h1>فرم درخواست صدور گذرنامه</h1>
-          <hr>
-      
-          <label for="email"><b> عکس (3x4) </b></label>
-          <input type="file" id="myFile" name="filename">
-          <br>
-          <label for="email"><b> عکس پایان خدمت یا معافیت تحصیلی</b></label>
-          <input type="file" id="myFile" name="filename">
-          <br>
-          <label for="email"><b> کارت ملی</b></label>
-          <input type="file" id="myFile" name="filename">
-          <br>
-          
-          <div class="clearfix">
-            <a class="btn btn-primary" role="button">ارسال</a>
+    <div class="services_main">
+    <form enctype="multipart/form-data" style="border:1px solid #ccc; background-color: black;" method="POST" action="/Passport/">
+      <div class="container form-group">
+        {% if messages %}
+          <div class="messages" style="font-size: xx-large;">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>  {{ message }} : {{ code }} </li>
+            {% endfor %}
           </div>
-        </div>
+          {% else %}
+          <h1 style="color:white">فرم دریافت گذرنامه</h1>
+
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit"  value="ارسال">
+          {% endif %}
+       </div>
       </form> 
+    </div>
       <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
       {% endblock page_content %}
